@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>File Integrity Checker - SHA-256</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>File Integrity Checker</h1>
+  <p>Detect file tampering using SHA-256 · Java Backend</p>
+</header>
+
+<main>
+  <div class="card">
+    <div id="drop">Drag &amp; drop a file here, or click to choose</div>
+    <input type="file" id="file" hidden>
+    <div id="fname"></div>
+
+    <div class="btns">
+      <button id="btnHash" disabled>1. Generate Hash</button>
+      <button id="btnVerify" disabled>2. Verify File</button>
+    </div>
+
+    <p class="hint">
+      Tip: generate the hash first, then edit the file and verify it again using the same file name.
+    </p>
+  </div>
+
+  <div class="card" id="resultCard" hidden>
+    <h2>Result</h2>
+    <div id="result"></div>
+  </div>
+
+  <div class="card">
+    <h2>Saved Reference Hashes</h2>
+    <table>
+      <thead>
+        <tr><th>File</th><th>SHA-256</th></tr>
+      </thead>
+      <tbody id="refs">
+        <tr><td colspan="2" class="hint">No references yet</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
